@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Data Analytics Dashboard - William Osei Aborah</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .project-detail {
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+        }
+        .project-detail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        .project-content {
+            background: white;
+            color: #333;
+            padding: 3rem 0;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .tech-item {
+            background: #4a6fdc;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../index.html" style="color: inherit; text-decoration: none;">William Osei Aborah</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main style="margin-top: 70px;">
+        <section class="project-detail">
+            <div class="container">
+                <h1>📊 Data Analysis Dashboard</h1>
+                <p class="lead">An interactive web-based dashboard for visualizing complex datasets with filtering capabilities, trends analysis, and exportable reports.</p>
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="container">
+                <h2>Project Overview</h2>
+                <p>This data analysis dashboard was built to help organizations make data-driven decisions by providing intuitive visualizations and interactive features. The dashboard processes large datasets and presents them in an easily digestible format with real-time filtering and export capabilities.</p>
+
+                <div class="tech-stack">
+                    <span class="tech-item">🐍 Python</span>
+                    <span class="tech-item">🐼 Pandas</span>
+                    <span class="tech-item">📈 Matplotlib</span>
+                    <span class="tech-item">🚀 Streamlit</span>
+                    <span class="tech-item">📊 Plotly</span>
+                    <span class="tech-item">🗃️ SQLite</span>
+                </div>
+
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>📈 Interactive Charts</h4>
+                        <p>Dynamic charts and graphs that respond to user interactions with zoom, pan, and hover capabilities.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🔍 Advanced Filtering</h4>
+                        <p>Multi-dimensional filtering system allowing users to drill down into specific data segments.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📋 Export Functionality</h4>
+                        <p>Export filtered data and visualizations in multiple formats (CSV, PDF, PNG).</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📊 Real-time Updates</h4>
+                        <p>Live data connection with automatic refresh capabilities for real-time monitoring.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🎯 Custom Metrics</h4>
+                        <p>User-defined KPIs and metrics with customizable thresholds and alerts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📱 Responsive Design</h4>
+                        <p>Mobile-friendly interface that works seamlessly across all device sizes.</p>
+                    </div>
+                </div>
+
+                <h3>Technical Challenges Overcome</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-left: 4px solid #4a6fdc;">⚡ <strong>Performance Optimization:</strong> Implemented efficient data processing algorithms to handle datasets with 100K+ records</li>
+                    <li style="margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-left: 4px solid #4a6fdc;">🔒 <strong>Data Security:</strong> Built secure data handling mechanisms with user authentication and access controls</li>
+                    <li style="margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-left: 4px solid #4a6fdc;">🎨 <strong>UI/UX Design:</strong> Created an intuitive interface that makes complex data accessible to non-technical users</li>
+                </ul>
+
+                <h3>Future Enhancements</h3>
+                <p>Planned improvements include machine learning integration for predictive analytics, API connectivity for external data sources, and collaborative features for team-based analysis.</p>
+
+                <div style="text-align: center; margin: 3rem 0;">
+                    <a href="../index.html#projects" class="btn">← Back to Projects</a>
+                    <a href="#dashboard-demo" class="btn" style="margin-left: 1rem;">View Live Demo</a>
+                </div>
+
+                <!-- Interactive Dashboard Demo -->
+                <div id="dashboard-demo" style="background: #f8f9fa; padding: 3rem; margin: 3rem 0; border-radius: 15px;">
+                    <h3 style="text-align: center; margin-bottom: 2rem;">📊 Interactive Data Dashboard</h3>
+                    
+                    <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                        <select id="datasetSelect" style="padding: 0.75rem; border-radius: 8px; border: 2px solid #667eea; font-size: 1rem;">
+                            <option value="sales">Sales Data</option>
+                            <option value="users">User Analytics</option>
+                            <option value="performance">Performance Metrics</option>
+                        </select>
+                        <select id="chartType" style="padding: 0.75rem; border-radius: 8px; border: 2px solid #667eea; font-size: 1rem;">
+                            <option value="line">Line Chart</option>
+                            <option value="bar">Bar Chart</option>
+                            <option value="pie">Pie Chart</option>
+                        </select>
+                        <button id="refreshData" class="btn" style="background: #667eea;">Refresh Data</button>
+                        <button id="exportData" class="btn" style="background: #27ae60;">Export CSV</button>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                            <h4 style="margin: 0; font-size: 0.9rem;">Total Sales</h4>
+                            <p id="totalSales" style="margin: 0.5rem 0 0 0; font-size: 2rem; font-weight: bold;">$125,430</p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #4ecdc4, #45b7aa); color: white; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                            <h4 style="margin: 0; font-size: 0.9rem;">Active Users</h4>
+                            <p id="activeUsers" style="margin: 0.5rem 0 0 0; font-size: 2rem; font-weight: bold;">2,847</p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #ff6b6b, #ee5a52); color: white; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                            <h4 style="margin: 0; font-size: 0.9rem;">Conversion Rate</h4>
+                            <p id="conversionRate" style="margin: 0.5rem 0 0 0; font-size: 2rem; font-weight: bold;">3.2%</p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #feca57, #ff9ff3); color: white; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                            <h4 style="margin: 0; font-size: 0.9rem;">Avg. Order Value</h4>
+                            <p id="avgOrder" style="margin: 0.5rem 0 0 0; font-size: 2rem; font-weight: bold;">$87.50</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h4 style="margin: 0;">📈 Performance Trends</h4>
+                            <div>
+                                <button id="period7" class="btn" style="background: #e9ecef; color: #333; margin: 0 0.25rem; padding: 0.5rem 1rem;">7D</button>
+                                <button id="period30" class="btn" style="background: #667eea; margin: 0 0.25rem; padding: 0.5rem 1rem;">30D</button>
+                                <button id="period90" class="btn" style="background: #e9ecef; color: #333; margin: 0 0.25rem; padding: 0.5rem 1rem;">90D</button>
+                            </div>
+                        </div>
+                        <canvas id="mainChart" width="400" height="200" style="width: 100%; max-height: 300px;"></canvas>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <h4 style="margin: 0 0 1rem 0;">🗂️ Data Filters</h4>
+                            <div style="margin-bottom: 1rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Date Range:</label>
+                                <input type="date" id="startDate" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; margin-right: 0.5rem;">
+                                <input type="date" id="endDate" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Category:</label>
+                                <select id="categoryFilter" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                                    <option value="all">All Categories</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="clothing">Clothing</option>
+                                    <option value="books">Books</option>
+                                </select>
+                            </div>
+                            <button id="applyFilters" class="btn" style="width: 100%; background: #4ecdc4;">Apply Filters</button>
+                        </div>
+                        
+                        <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <h4 style="margin: 0 0 1rem 0;">📋 Recent Activity</h4>
+                            <div id="activityFeed" style="max-height: 200px; overflow-y: auto;">
+                                <div style="padding: 0.75rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                                    <span>New user registration</span>
+                                    <small style="color: #666;">2 mins ago</small>
+                                </div>
+                                <div style="padding: 0.75rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                                    <span>Order #1234 completed</span>
+                                    <small style="color: #666;">5 mins ago</small>
+                                </div>
+                                <div style="padding: 0.75rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                                    <span>Payment processed</span>
+                                    <small style="color: #666;">8 mins ago</small>
+                                </div>
+                                <div style="padding: 0.75rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                                    <span>New product added</span>
+                                    <small style="color: #666;">12 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear">2025</span> William Osei Aborah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Chart.js chart
+        let chart;
+        let currentDataset = 'sales';
+        let currentPeriod = 30;
+        
+        const datasets = {
+            sales: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                data: [12000, 19000, 15000, 25000, 22000, 30000],
+                label: 'Sales Revenue ($)',
+                color: '#667eea'
+            },
+            users: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                data: [1200, 1900, 1500, 2100, 2400, 2847],
+                label: 'Active Users',
+                color: '#4ecdc4'
+            },
+            performance: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                data: [85, 92, 88, 96],
+                label: 'Performance Score (%)',
+                color: '#ff6b6b'
+            }
+        };
+        
+        function initializeChart() {
+            const ctx = document.getElementById('mainChart').getContext('2d');
+            const data = datasets[currentDataset];
+            
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: data.label,
+                        data: data.data,
+                        borderColor: data.color,
+                        backgroundColor: data.color + '20',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: '#f0f0f0'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: '#f0f0f0'
+                            }
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    animation: {
+                        duration: 1000,
+                        easing: 'easeInOutQuart'
+                    }
+                }
+            });
+        }
+        
+        function updateChart() {
+            const data = datasets[currentDataset];
+            const chartType = document.getElementById('chartType').value;
+            
+            chart.destroy();
+            
+            const ctx = document.getElementById('mainChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: chartType,
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: data.label,
+                        data: data.data,
+                        borderColor: data.color,
+                        backgroundColor: chartType === 'pie' ? 
+                            ['#667eea', '#4ecdc4', '#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3'] :
+                            data.color + (chartType === 'line' ? '20' : '80'),
+                        borderWidth: chartType === 'line' ? 3 : 1,
+                        fill: chartType === 'line',
+                        tension: chartType === 'line' ? 0.4 : 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    },
+                    scales: chartType === 'pie' ? {} : {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: '#f0f0f0'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: '#f0f0f0'
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 1000,
+                        easing: 'easeInOutQuart'
+                    }
+                }
+            });
+        }
+        
+        function updateMetrics() {
+            // Simulate real-time data updates
+            const baseValues = {
+                sales: 125430,
+                users: 2847,
+                conversion: 3.2,
+                avgOrder: 87.50
+            };
+            
+            // Add some random variation
+            document.getElementById('totalSales').textContent = 
+                '$' + (baseValues.sales + Math.floor(Math.random() * 10000 - 5000)).toLocaleString();
+            document.getElementById('activeUsers').textContent = 
+                (baseValues.users + Math.floor(Math.random() * 100 - 50)).toLocaleString();
+            document.getElementById('conversionRate').textContent = 
+                (baseValues.conversion + (Math.random() * 2 - 1)).toFixed(1) + '%';
+            document.getElementById('avgOrder').textContent = 
+                '$' + (baseValues.avgOrder + (Math.random() * 20 - 10)).toFixed(2);
+        }
+        
+        function addActivityItem() {
+            const activities = [
+                'New user registration',
+                'Order completed',
+                'Payment processed',
+                'Product viewed',
+                'Cart abandoned',
+                'Newsletter signup',
+                'Review submitted',
+                'Wishlist item added'
+            ];
+            
+            const activity = activities[Math.floor(Math.random() * activities.length)];
+            const timeAgo = Math.floor(Math.random() * 30) + 1;
+            
+            const feed = document.getElementById('activityFeed');
+            const newItem = document.createElement('div');
+            newItem.style.cssText = 'padding: 0.75rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; opacity: 0; transition: opacity 0.3s ease;';
+            newItem.innerHTML = `
+                <span>${activity}</span>
+                <small style="color: #666;">${timeAgo} mins ago</small>
+            `;
+            
+            feed.insertBefore(newItem, feed.firstChild);
+            
+            // Fade in animation
+            setTimeout(() => newItem.style.opacity = '1', 100);
+            
+            // Remove old items if too many
+            if (feed.children.length > 8) {
+                feed.removeChild(feed.lastChild);
+            }
+        }
+        
+        function exportToCSV() {
+            const data = datasets[currentDataset];
+            let csv = 'Label,Value\n';
+            
+            data.labels.forEach((label, index) => {
+                csv += `${label},${data.data[index]}\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${currentDataset}_data.csv`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+        
+        // Event listeners
+        document.getElementById('datasetSelect').addEventListener('change', (e) => {
+            currentDataset = e.target.value;
+            updateChart();
+        });
+        
+        document.getElementById('chartType').addEventListener('change', updateChart);
+        
+        document.getElementById('refreshData').addEventListener('click', () => {
+            updateMetrics();
+            updateChart();
+            addActivityItem();
+        });
+        
+        document.getElementById('exportData').addEventListener('click', exportToCSV);
+        
+        // Period buttons
+        ['period7', 'period30', 'period90'].forEach(id => {
+            document.getElementById(id).addEventListener('click', (e) => {
+                // Update button styles
+                document.querySelectorAll('[id^="period"]').forEach(btn => {
+                    btn.style.background = '#e9ecef';
+                    btn.style.color = '#333';
+                });
+                e.target.style.background = '#667eea';
+                e.target.style.color = 'white';
+                
+                currentPeriod = parseInt(id.replace('period', ''));
+                updateChart();
+            });
+        });
+        
+        document.getElementById('applyFilters').addEventListener('click', () => {
+            // Simulate filtering
+            updateChart();
+            updateMetrics();
+        });
+        
+        // Set default dates
+        const today = new Date();
+        const thirtyDaysAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+        document.getElementById('endDate').value = today.toISOString().split('T')[0];
+        document.getElementById('startDate').value = thirtyDaysAgo.toISOString().split('T')[0];
+        
+        // Initialize dashboard
+        initializeChart();
+        
+        // Set up real-time updates
+        setInterval(updateMetrics, 10000); // Update metrics every 10 seconds
+        setInterval(addActivityItem, 15000); // Add new activity every 15 seconds
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,12 @@
+<svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="125" cy="125" r="125" fill="#e9ecef"/>
+  
+  <!-- Stylized person silhouette -->
+  <circle cx="125" cy="85" r="40" fill="#4a6fdc" />
+  <path d="M125 135 C80 135 45 170 45 215 L205 215 C205 170 170 135 125 135Z" fill="#4a6fdc" />
+  
+  <!-- Initials overlay -->
+  <text x="125" y="95" font-family="Montserrat, sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">WO</text>
+</svg>
+

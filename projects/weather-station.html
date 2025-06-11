@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart IoT Weather Station - William Osei Aborah</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-detail {
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-detail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.3"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.2"/><circle cx="40" cy="80" r="1.5" fill="white" opacity="0.25"/></svg>');
+            animation: float 20s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        .project-content {
+            background: white;
+            color: #333;
+            padding: 3rem 0;
+        }
+        .weather-demo {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            color: white;
+            text-align: center;
+        }
+        .sensor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .sensor-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .sensor-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        .component-diagram {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid #0984e3;
+        }
+        .hardware-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .hardware-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 3px solid #74b9ff;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../index.html" style="color: inherit; text-decoration: none;">William Osei Aborah</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main style="margin-top: 70px;">
+        <section class="project-detail">
+            <div class="container">
+                <h1>🌦️ IoT Weather Station</h1>
+                <p class="lead">A comprehensive Internet of Things weather monitoring system that collects environmental data through multiple sensors and displays real-time information on an interactive web dashboard.</p>
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="container">
+                <h2>Project Overview</h2>
+                <p>The IoT Weather Station is a fully functional environmental monitoring system that combines hardware sensors with modern web technologies. It continuously monitors weather conditions and provides real-time data visualization through a responsive web interface accessible from anywhere.</p>
+
+                <div class="tech-stack">
+                    <span class="tech-item">🔌 Arduino</span>
+                    <span class="tech-item">🌡️ Sensors</span>
+                    <span class="tech-item">📶 WiFi Module</span>
+                    <span class="tech-item">🔗 APIs</span>
+                    <span class="tech-item">🌐 HTML/CSS/JS</span>
+                    <span class="tech-item">🗃️ Database</span>
+                </div>
+
+                <!-- Live Weather Demo -->
+                <div class="weather-demo">
+                    <h3>🌡️ Live Weather Data</h3>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">Real-time environmental monitoring</p>
+                    <div class="sensor-grid">
+                        <div class="sensor-card">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌡️</div>
+                            <div>Temperature</div>
+                            <div class="sensor-value" id="temperature">24.3°C</div>
+                        </div>
+                        <div class="sensor-card">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">💧</div>
+                            <div>Humidity</div>
+                            <div class="sensor-value" id="humidity">62%</div>
+                        </div>
+                        <div class="sensor-card">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌬️</div>
+                            <div>Pressure</div>
+                            <div class="sensor-value" id="pressure">1013 hPa</div>
+                        </div>
+                        <div class="sensor-card">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎆</div>
+                            <div>Air Quality</div>
+                            <div class="sensor-value" id="airquality">Good</div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1rem;">Data updates every 30 seconds</p>
+                </div>
+
+                <h3>Hardware Components</h3>
+                <div class="component-diagram">
+                    <h4>🔧 System Architecture</h4>
+                    <div class="hardware-list">
+                        <div class="hardware-item">
+                            <h5>🔌 Arduino Uno R3</h5>
+                            <p>Main microcontroller for sensor data collection and processing</p>
+                        </div>
+                        <div class="hardware-item">
+                            <h5>🌡️ DHT22 Sensor</h5>
+                            <p>High-precision temperature and humidity measurements</p>
+                        </div>
+                        <div class="hardware-item">
+                            <h5>🌬️ BMP280 Sensor</h5>
+                            <p>Atmospheric pressure and altitude detection</p>
+                        </div>
+                        <div class="hardware-item">
+                            <h5>🎆 MQ-135 Gas Sensor</h5>
+                            <p>Air quality monitoring for various gases</p>
+                        </div>
+                        <div class="hardware-item">
+                            <h5>📶 ESP8266 WiFi Module</h5>
+                            <p>Wireless connectivity for data transmission</p>
+                        </div>
+                        <div class="hardware-item">
+                            <h5>🔋 Solar Panel</h5>
+                            <p>Sustainable power source with battery backup</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Key Features</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <div style="background: #e3f2fd; padding: 2rem; border-radius: 8px; border-left: 4px solid #2196f3;">
+                        <h4>📊 Real-time Monitoring</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>• Live data updates every 30 seconds</li>
+                            <li>• Historical data logging and trends</li>
+                            <li>• Interactive charts and graphs</li>
+                            <li>• Mobile-responsive dashboard</li>
+                        </ul>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 2rem; border-radius: 8px; border-left: 4px solid #4caf50;">
+                        <h4>🔔 Smart Alerts</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>• Customizable threshold notifications</li>
+                            <li>• Email and SMS alert system</li>
+                            <li>• Weather warnings and forecasts</li>
+                            <li>• Maintenance reminders</li>
+                        </ul>
+                    </div>
+                    <div style="background: #fff3e0; padding: 2rem; border-radius: 8px; border-left: 4px solid #ff9800;">
+                        <h4>📱 Remote Access</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>• Web-based control panel</li>
+                            <li>• Mobile app for iOS and Android</li>
+                            <li>• API endpoints for integration</li>
+                            <li>• Cloud data storage and backup</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Technical Implementation</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 1rem 0; padding: 1rem; background: #f0f8ff; border-left: 4px solid #74b9ff;">🔌 <strong>Embedded Programming:</strong> C++ code for Arduino handling sensor readings, data processing, and WiFi communication</li>
+                    <li style="margin: 1rem 0; padding: 1rem; background: #f0f8ff; border-left: 4px solid #74b9ff;">🌐 <strong>Web Dashboard:</strong> Responsive frontend using HTML5, CSS3, and JavaScript with real-time WebSocket connections</li>
+                    <li style="margin: 1rem 0; padding: 1rem; background: #f0f8ff; border-left: 4px solid #74b9ff;">🗃️ <strong>Data Management:</strong> SQLite database for local storage with cloud synchronization capabilities</li>
+                    <li style="margin: 1rem 0; padding: 1rem; background: #f0f8ff; border-left: 4px solid #74b9ff;">🔒 <strong>Security:</strong> Encrypted data transmission with user authentication and access control</li>
+                    <li style="margin: 1rem 0; padding: 1rem; background: #f0f8ff; border-left: 4px solid #74b9ff;">♾️ <strong>Power Management:</strong> Smart sleep modes and solar charging system for 24/7 operation</li>
+                </ul>
+
+                <h3>Applications & Impact</h3>
+                <div style="background: #f5f5f5; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                    <p><strong>🏠 Home Automation:</strong> Integration with smart home systems for climate control optimization</p>
+                    <p><strong>🌾 Agriculture:</strong> Crop monitoring and irrigation management for farmers</p>
+                    <p><strong>🏢 Research:</strong> Environmental data collection for climate studies and research projects</p>
+                    <p><strong>🏗️ Construction:</strong> Site monitoring for weather-dependent construction activities</p>
+                </div>
+
+                <h3>Future Enhancements</h3>
+                <p>Planned improvements include machine learning for weather prediction, integration with national weather services, additional sensors for UV index and wind speed, and development of a companion mobile app with offline capabilities.</p>
+
+                <div style="text-align: center; margin: 3rem 0;">
+                    <a href="../index.html#projects" class="btn">← Back to Projects</a>
+                    <a href="#" class="btn" style="margin-left: 1rem;">View Live Station</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear">2025</span> William Osei Aborah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simulate live weather data updates
+        function updateWeatherData() {
+            const temp = (20 + Math.random() * 10).toFixed(1);
+            const humidity = (50 + Math.random() * 30).toFixed(0);
+            const pressure = (1000 + Math.random() * 30).toFixed(0);
+            const airQualityStates = ['Excellent', 'Good', 'Fair', 'Poor'];
+            const airQuality = airQualityStates[Math.floor(Math.random() * 3)];
+
+            document.getElementById('temperature').textContent = temp + '°C';
+            document.getElementById('humidity').textContent = humidity + '%';
+            document.getElementById('pressure').textContent = pressure + ' hPa';
+            document.getElementById('airquality').textContent = airQuality;
+        }
+
+        // Update data every 5 seconds for demo purposes
+        setInterval(updateWeatherData, 5000);
+
+        // Initial update
+        updateWeatherData();
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

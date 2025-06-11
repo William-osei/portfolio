@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Pro - William Osei Aborah</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-detail {
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+            color: white;
+        }
+        .app-container {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .task-input {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .task-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            min-width: 200px;
+        }
+        .task-input select {
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+        }
+        .add-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .add-btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .filter-btn {
+            background: #e2e8f0;
+            color: #4a5568;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        .task-list {
+            space-y: 1rem;
+        }
+        .task-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        .task-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .task-item.completed {
+            opacity: 0.7;
+            border-left-color: #27ae60;
+        }
+        .task-item.completed .task-text {
+            text-decoration: line-through;
+        }
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        .task-text {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .task-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .task-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .task-btn {
+            padding: 0.25rem 0.75rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .complete-btn {
+            background: #27ae60;
+            color: white;
+        }
+        .edit-btn {
+            background: #f39c12;
+            color: white;
+        }
+        .delete-btn {
+            background: #e74c3c;
+            color: white;
+        }
+        .priority-high { border-left-color: #e74c3c; }
+        .priority-medium { border-left-color: #f39c12; }
+        .priority-low { border-left-color: #27ae60; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../index.html" style="color: inherit; text-decoration: none;">William Osei Aborah</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main style="margin-top: 70px;">
+        <section class="project-detail">
+            <div class="container">
+                <h1>📝 Task Manager Pro</h1>
+                <p class="lead">A feature-rich todo application with categories, priority levels, due dates, and local storage to keep your tasks organized and productive.</p>
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="container">
+                <h2>Application Overview</h2>
+                <p>Task Manager Pro is a comprehensive task management solution that helps you stay organized and productive. With features like priority levels, categories, due dates, and persistent storage, it's designed to handle both simple todo lists and complex project management needs.</p>
+
+                <div class="tech-stack">
+                    <span class="tech-item">🌐 HTML5</span>
+                    <span class="tech-item">🎨 CSS3</span>
+                    <span class="tech-item">⚡ JavaScript</span>
+                    <span class="tech-item">💾 LocalStorage</span>
+                    <span class="tech-item">📊 Data Management</span>
+                </div>
+
+                <div class="app-container">
+                    <h3>📅 Task Manager</h3>
+                    
+                    <div class="stats">
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalTasks">0</div>
+                            <div>Total Tasks</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="completedTasks">0</div>
+                            <div>Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="pendingTasks">0</div>
+                            <div>Pending</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="overdueTasks">0</div>
+                            <div>Overdue</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task-input">
+                        <input type="text" id="taskInput" placeholder="Enter a new task..." maxlength="200">
+                        <select id="categorySelect">
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="study">Study</option>
+                            <option value="health">Health</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <select id="prioritySelect">
+                            <option value="low">Low Priority</option>
+                            <option value="medium">Medium Priority</option>
+                            <option value="high">High Priority</option>
+                        </select>
+                        <input type="date" id="dueDateInput">
+                        <button class="add-btn" id="addTaskBtn">Add Task</button>
+                    </div>
+                    
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">All Tasks</button>
+                        <button class="filter-btn" data-filter="pending">Pending</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                        <button class="filter-btn" data-filter="overdue">Overdue</button>
+                        <button class="filter-btn" data-filter="high">High Priority</button>
+                    </div>
+                    
+                    <div class="task-list" id="taskList">
+                        <!-- Tasks will be dynamically added here -->
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button id="clearCompletedBtn" class="btn" style="background: #e74c3c; margin-right: 1rem;">Clear Completed</button>
+                        <button id="clearAllBtn" class="btn" style="background: #95a5a6;">Clear All Tasks</button>
+                    </div>
+                </div>
+
+                <h3>Application Features</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <div style="background: #e8f5e8; padding: 2rem; border-radius: 8px; border-left: 4px solid #27ae60;">
+                        <h4>📅 Task Organization</h4>
+                        <p>Organize tasks with categories, priority levels, and due dates for better productivity management.</p>
+                    </div>
+                    <div style="background: #fff3e0; padding: 2rem; border-radius: 8px; border-left: 4px solid #ff9800;">
+                        <h4>💾 Persistent Storage</h4>
+                        <p>All tasks are automatically saved to browser storage, ensuring your data persists across sessions.</p>
+                    </div>
+                    <div style="background: #f3e5f5; padding: 2rem; border-radius: 8px; border-left: 4px solid #9c27b0;">
+                        <h4>📊 Progress Tracking</h4>
+                        <p>Real-time statistics and filtering options help you track your productivity and manage workload.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 3rem 0;">
+                    <a href="../index.html#projects" class="btn">← Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear">2025</span> William Osei Aborah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Task Manager JavaScript
+        let tasks = JSON.parse(localStorage.getItem('todoTasks')) || [];
+        let currentFilter = 'all';
+        let editingTaskId = null;
+
+        const taskInput = document.getElementById('taskInput');
+        const categorySelect = document.getElementById('categorySelect');
+        const prioritySelect = document.getElementById('prioritySelect');
+        const dueDateInput = document.getElementById('dueDateInput');
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        const taskList = document.getElementById('taskList');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const clearCompletedBtn = document.getElementById('clearCompletedBtn');
+        const clearAllBtn = document.getElementById('clearAllBtn');
+
+        function generateId() {
+            return Date.now().toString(36) + Math.random().toString(36).substr(2);
+        }
+
+        function saveTasks() {
+            localStorage.setItem('todoTasks', JSON.stringify(tasks));
+        }
+
+        function addTask() {
+            const text = taskInput.value.trim();
+            if (!text) return;
+
+            const task = {
+                id: editingTaskId || generateId(),
+                text: text,
+                category: categorySelect.value,
+                priority: prioritySelect.value,
+                dueDate: dueDateInput.value,
+                completed: false,
+                createdAt: editingTaskId ? tasks.find(t => t.id === editingTaskId).createdAt : new Date().toISOString()
+            };
+
+            if (editingTaskId) {
+                const index = tasks.findIndex(t => t.id === editingTaskId);
+                tasks[index] = task;
+                editingTaskId = null;
+                addTaskBtn.textContent = 'Add Task';
+            } else {
+                tasks.unshift(task);
+            }
+
+            taskInput.value = '';
+            dueDateInput.value = '';
+            saveTasks();
+            renderTasks();
+            updateStats();
+        }
+
+        function deleteTask(id) {
+            if (confirm('Are you sure you want to delete this task?')) {
+                tasks = tasks.filter(task => task.id !== id);
+                saveTasks();
+                renderTasks();
+                updateStats();
+            }
+        }
+
+        function toggleTask(id) {
+            const task = tasks.find(task => task.id === id);
+            task.completed = !task.completed;
+            saveTasks();
+            renderTasks();
+            updateStats();
+        }
+
+        function editTask(id) {
+            const task = tasks.find(task => task.id === id);
+            taskInput.value = task.text;
+            categorySelect.value = task.category;
+            prioritySelect.value = task.priority;
+            dueDateInput.value = task.dueDate;
+            editingTaskId = id;
+            addTaskBtn.textContent = 'Update Task';
+            taskInput.focus();
+        }
+
+        function isOverdue(dueDate) {
+            if (!dueDate) return false;
+            return new Date(dueDate) < new Date().setHours(0,0,0,0);
+        }
+
+        function formatDate(dateString) {
+            if (!dateString) return '';
+            return new Date(dateString).toLocaleDateString();
+        }
+
+        function getFilteredTasks() {
+            switch (currentFilter) {
+                case 'completed':
+                    return tasks.filter(task => task.completed);
+                case 'pending':
+                    return tasks.filter(task => !task.completed);
+                case 'overdue':
+                    return tasks.filter(task => !task.completed && isOverdue(task.dueDate));
+                case 'high':
+                    return tasks.filter(task => task.priority === 'high');
+                default:
+                    return tasks;
+            }
+        }
+
+        function renderTasks() {
+            const filteredTasks = getFilteredTasks();
+            
+            if (filteredTasks.length === 0) {
+                taskList.innerHTML = `
+                    <div style="text-align: center; padding: 2rem; color: #666;">
+                        <h3>No tasks found</h3>
+                        <p>Add a new task to get started!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            taskList.innerHTML = filteredTasks.map(task => `
+                <div class="task-item ${task.completed ? 'completed' : ''} priority-${task.priority}">
+                    <div class="task-header">
+                        <div class="task-text">${task.text}</div>
+                    </div>
+                    <div class="task-meta">
+                        <span>📁 ${task.category.charAt(0).toUpperCase() + task.category.slice(1)}</span>
+                        <span>🔥 ${task.priority.charAt(0).toUpperCase() + task.priority.slice(1)} Priority</span>
+                        ${task.dueDate ? `<span class="${isOverdue(task.dueDate) && !task.completed ? 'text-danger' : ''}">📅 Due: ${formatDate(task.dueDate)} ${isOverdue(task.dueDate) && !task.completed ? '(Overdue)' : ''}</span>` : ''}
+                    </div>
+                    <div class="task-actions">
+                        <button class="task-btn complete-btn" onclick="toggleTask('${task.id}')">
+                            ${task.completed ? '↶ Undo' : '✓ Complete'}
+                        </button>
+                        <button class="task-btn edit-btn" onclick="editTask('${task.id}')">✏️ Edit</button>
+                        <button class="task-btn delete-btn" onclick="deleteTask('${task.id}')">🗑️ Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateStats() {
+            const total = tasks.length;
+            const completed = tasks.filter(task => task.completed).length;
+            const pending = tasks.filter(task => !task.completed).length;
+            const overdue = tasks.filter(task => !task.completed && isOverdue(task.dueDate)).length;
+
+            document.getElementById('totalTasks').textContent = total;
+            document.getElementById('completedTasks').textContent = completed;
+            document.getElementById('pendingTasks').textContent = pending;
+            document.getElementById('overdueTasks').textContent = overdue;
+        }
+
+        function setFilter(filter) {
+            currentFilter = filter;
+            filterBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.filter === filter);
+            });
+            renderTasks();
+        }
+
+        // Event Listeners
+        addTaskBtn.addEventListener('click', addTask);
+        
+        taskInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                addTask();
+            }
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setFilter(btn.dataset.filter);
+            });
+        });
+
+        clearCompletedBtn.addEventListener('click', () => {
+            if (confirm('Clear all completed tasks?')) {
+                tasks = tasks.filter(task => !task.completed);
+                saveTasks();
+                renderTasks();
+                updateStats();
+            }
+        });
+
+        clearAllBtn.addEventListener('click', () => {
+            if (confirm('Clear all tasks? This action cannot be undone.')) {
+                tasks = [];
+                saveTasks();
+                renderTasks();
+                updateStats();
+            }
+        });
+
+        // Set default due date to today
+        dueDateInput.value = new Date().toISOString().split('T')[0];
+
+        // Initialize app
+        renderTasks();
+        updateStats();
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
