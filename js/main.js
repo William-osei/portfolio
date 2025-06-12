@@ -740,7 +740,7 @@ function startAutoplay() {
     autoplayInterval = setInterval(() => {
         currentSlideIndex++;
         showSlide(currentSlideIndex);
-    }, 4000); // Change slide every 4 seconds
+    }, 3000); // Change slide every 3 seconds
 }
 
 function stopAutoplay() {
@@ -753,11 +753,11 @@ function toggleAutoplay() {
     if (isAutoplayRunning) {
         stopAutoplay();
         isAutoplayRunning = false;
-        btn.textContent = '▶ Play';
+        btn.textContent = '▶ Commence Play';
     } else {
         startAutoplay();
         isAutoplayRunning = true;
-        btn.textContent = '⏸ Pause';
+        btn.textContent = '⏸Timeout Pause';
     }
 }
 
