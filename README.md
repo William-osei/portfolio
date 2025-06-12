@@ -1,6 +1,6 @@
 # William Osei Aborah - Portfolio Website
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-brightgreen)](https://tongtei.github.io/tong-portfolio)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-brightgreen)](https://william-osei.github.io/portfolio)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -83,7 +83,7 @@ Welcome to my personal portfolio website! I'm William Osei Aborah, a passionate 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/portfolio.git
+   git clone https://github.com/William-osei/portfolio.git
    cd portfolio
    ```
 
@@ -104,7 +104,9 @@ Welcome to my personal portfolio website! I'm William Osei Aborah, a passionate 
 
 ## 🌐 Live Demo
 
-**Portfolio Website**: [https://your-username.github.io/portfolio](https://your-username.github.io/portfolio)
+**🚀 Portfolio Website**: [https://william-osei.github.io/portfolio](https://william-osei.github.io/portfolio)
+
+> **✨ Click the link above to view my live portfolio!** The website is fully responsive and optimized for all devices.
 
 ## 📄 File Structure
 
