@@ -16,6 +16,7 @@ Welcome to my personal portfolio website! I'm William Osei Aborah, a passionate 
 - **Interactive Projects**: Live demos and detailed project showcases
 - **Smooth Animations**: Modern CSS animations and scroll effects
 - **Contact Form**: Functional contact form with validation
+- **Professional Resume**: Dedicated resume page with print functionality
 - **Progressive Web App**: Fast loading and offline capabilities
 
 ## 🛠️ Technologies Used
@@ -41,6 +42,7 @@ Welcome to my personal portfolio website! I'm William Osei Aborah, a passionate 
 5. **Skills**: Technical skills organized by category
 6. **Projects**: Interactive showcase of 10+ projects
 7. **Contact**: Professional contact information and form
+8. **Resume**: Professional resume page with print functionality
 
 ## 🚀 Featured Projects
 
@@ -113,8 +115,11 @@ Welcome to my personal portfolio website! I'm William Osei Aborah, a passionate 
 ```
 portfolio/
 ├── index.html                 # Main portfolio page
+├── resume.html                # Professional resume page
+├── resume.md                  # Markdown version of resume
 ├── css/
-│   └── style.css             # Main stylesheet
+│   ├── style.css             # Main stylesheet
+│   └── resume.css            # Resume-specific styles
 ├── js/
 │   └── main.js               # JavaScript functionality
 ├── images/

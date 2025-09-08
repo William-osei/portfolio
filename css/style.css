@@ -769,6 +769,33 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+/* Resume link special styling */
+.resume-link {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    color: white !important;
+    padding: 8px 12px !important;
+    border-radius: 20px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all var(--transition-normal) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.resume-link:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+    color: white !important;
+}
+
+.resume-link::after {
+    display: none !important;
+}
+
+/* Dark mode resume link */
+body.dark-mode .resume-link {
+    background: linear-gradient(135deg, var(--dark-mode-primary), var(--dark-mode-secondary)) !important;
+}
+
 /* Hamburger menu for mobile */
 .hamburger {
     display: none;
