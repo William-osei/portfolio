@@ -80,7 +80,7 @@
     gap: 10px;
 }
 
-.print-btn, .back-btn {
+.print-btn, .back-btn, .pdf-btn {
     padding: 8px 16px;
     border: 2px solid white;
     background: transparent;
@@ -92,7 +92,7 @@
     transition: all 0.3s ease;
 }
 
-.print-btn:hover, .back-btn:hover {
+.print-btn:hover, .back-btn:hover, .pdf-btn:hover {
     background: white;
     color: #667eea;
 }
@@ -261,12 +261,14 @@
     .resume-body {
         background: white;
         padding: 0;
+        font-size: 12pt;
     }
     
     .resume-container {
         box-shadow: none;
         border-radius: 0;
         max-width: none;
+        margin: 0;
     }
     
     .resume-actions {
@@ -277,16 +279,20 @@
         background: #667eea !important;
         -webkit-print-color-adjust: exact;
         color-adjust: exact;
+        print-color-adjust: exact;
+        page-break-inside: avoid;
     }
     
     .section-title {
         color: #333 !important;
         border-bottom: 2px solid #333 !important;
+        page-break-after: avoid;
     }
     
     .skill-category {
         border-left: 4px solid #333 !important;
         background: #f5f5f5 !important;
+        page-break-inside: avoid;
     }
     
     .skill-category h4 {
@@ -299,6 +305,7 @@
     
     .resume-footer {
         background: #f5f5f5 !important;
+        page-break-inside: avoid;
     }
     
     .resume-section {
@@ -309,7 +316,46 @@
     .experience-item, .project-item {
         page-break-inside: avoid;
         break-inside: avoid;
+        margin-bottom: 15pt;
     }
+    
+    /* Optimize text for print */
+    h1, .name {
+        font-size: 24pt;
+    }
+    
+    h2, .section-title {
+        font-size: 18pt;
+    }
+    
+    h3 {
+        font-size: 14pt;
+    }
+    
+    h4 {
+        font-size: 12pt;
+    }
+    
+    p, li {
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+    
+    /* Ensure links are visible in print */
+    a {
+        color: #000 !important;
+        text-decoration: underline !important;
+    }
+}
+
+/* PDF mode specific styles */
+body.pdf-mode {
+    background: white !important;
+}
+
+body.pdf-mode .resume-container {
+    box-shadow: none !important;
+    border-radius: 0 !important;
 }
 
 /* Responsive Design */

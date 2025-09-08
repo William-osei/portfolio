@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="William Osei Aborah - Resume | Computer Engineering Student">
     <title>William Osei Aborah - Resume</title>
-    <link rel="stylesheet" href="css/resume.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/resume.css">
+    <style>
+        /* Inline critical styles to ensure display works even with file:// protocol */
+        body.resume-body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body class="resume-body">
     <div class="resume-container">
@@ -36,6 +54,7 @@
             </div>
             <div class="resume-actions">
                 <button onclick="window.print()" class="print-btn">🖨️ Print Resume</button>
+                <button onclick="downloadPDF()" class="pdf-btn">📄 Download PDF</button>
                 <a href="index.html" class="back-btn">← Back to Portfolio</a>
             </div>
         </header>
@@ -247,11 +266,44 @@
             window.print();
         }
 
+        // PDF download functionality
+        function downloadPDF() {
+            // Set print-optimized styles
+            document.body.classList.add('pdf-mode');
+            
+            // Trigger print dialog with instructions
+            const printInstructions = `
+To save as PDF:
+1. Click "Print" below
+2. In the print dialog, choose "Save as PDF" or "Microsoft Print to PDF"
+3. Click "Save" and choose your location
+4. Your resume will be saved as a PDF file
+
+Click OK to proceed to print dialog.
+            `;
+            
+            if (confirm(printInstructions)) {
+                setTimeout(() => {
+                    window.print();
+                    // Remove PDF mode after printing
+                    setTimeout(() => {
+                        document.body.classList.remove('pdf-mode');
+                    }, 1000);
+                }, 100);
+            }
+        }
+
         // Add print styles optimization
         document.addEventListener('DOMContentLoaded', function() {
             const printBtn = document.querySelector('.print-btn');
+            const pdfBtn = document.querySelector('.pdf-btn');
+            
             if (printBtn) {
                 printBtn.addEventListener('click', printResume);
+            }
+            
+            if (pdfBtn) {
+                pdfBtn.addEventListener('click', downloadPDF);
             }
         });
     </script>
