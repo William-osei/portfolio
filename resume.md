@@ -60,6 +60,24 @@ Driven computer engineering student with a passion for bridging hardware and sof
 - Applied Git workflow, branching strategies, and collaborative development practices
 - Participated in daily standups, code reviews, and agile development processes
 
+### Front-End Developer Intern
+**BeTechified** | *Five-week Vacation Training, 2025/2026*
+
+- Built responsive front-end pages with semantic HTML, CSS3, and JavaScript
+- Applied mobile-first design principles, Flexbox, and CSS Grid to improve layout quality
+- Used browser developer tools to debug responsiveness and styling issues across screen sizes
+- Contributed to a collaborative Medium-inspired team project and delivered a live walkthrough presentation
+- Strengthened teamwork, communication, time management, and technical presentation skills
+
+### Hackathon Team Member
+**Rohde & Schwarz AI-Assisted Onboarding Hackathon | KNUST 2026**
+
+- Contributed to Rhoda, a conversational XR lab assistant for Rohde & Schwarz oscilloscope onboarding
+- Worked on safety-gated instrument control flows for read, set, and measurement actions
+- Helped support guided workflows, troubleshooting context, and progress-tracking features
+- Collaborated with the team on a unified assistant experience spanning voice, chat, and instructor-facing tools
+- Project repository: https://github.com/PhidLarkson/rohde-schwarz-assistant
+
 ---
 
 ## Technical Skills
@@ -86,29 +104,55 @@ AWS, Azure, Docker, Version Control, Database Management, Cybersecurity Basics
 
 ## Featured Projects
 
-### Data Analysis Dashboard
-**Technologies:** Python, Pandas, Matplotlib, Streamlit  
-Interactive dashboard for visualizing complex datasets with filtering capabilities, trends analysis, and exportable reports.
+### [Data Analysis Dashboard](https://william-osei.github.io/portfolio/projects/data-dashboard.html)
+**Technologies:** Python, Pandas, Matplotlib, Streamlit<br>
+Interactive dashboard for visualizing complex datasets with filtering capabilities, trends analysis, and exportable reports.<br>
+**Direct URL:** https://william-osei.github.io/portfolio/projects/data-dashboard.html
 
-### Algorithm Visualizer
-**Technologies:** C++, JavaScript, HTML, CSS  
-Interactive tool that visualizes sorting, searching, and graph algorithms, helping users understand complex computer science concepts.
+### [Algorithm Visualizer](https://william-osei.github.io/portfolio/projects/algorithm-visualizer.html)
+**Technologies:** C++, JavaScript, HTML, CSS<br>
+Interactive tool that visualizes sorting, searching, and graph algorithms, helping users understand complex computer science concepts.<br>
+**Direct URL:** https://william-osei.github.io/portfolio/projects/algorithm-visualizer.html
 
-### IoT Weather Station
-**Technologies:** Arduino, Sensors, APIs, HTML/CSS/JS  
-Internet of Things weather station that collects environmental data and displays it on a web dashboard in real-time.
+### [Smart Calculator Pro](https://william-osei.github.io/portfolio/projects/calculator.html)
+**Technologies:** HTML, CSS, JavaScript, Math.js<br>
+Web-based scientific calculator with advanced mathematical functions, unit conversions, and formula memory capabilities.<br>
+**Direct URL:** https://william-osei.github.io/portfolio/projects/calculator.html
 
-### Smart Calculator Pro
-**Technologies:** HTML, CSS, JavaScript, Math.js  
-Web-based scientific calculator with advanced mathematical functions, unit conversions, and formula memory capabilities.
+### [IoT Weather Station](https://william-osei.github.io/portfolio/projects/weather-station.html)
+**Technologies:** Arduino, Sensors, APIs, HTML/CSS/JS<br>
+Internet of Things weather station that collects environmental data and displays it on a web dashboard in real-time.<br>
+**Direct URL:** https://william-osei.github.io/portfolio/projects/weather-station.html
 
-### Real-time Currency Converter
-**Technologies:** JavaScript, API Integration, Chart.js  
+### [Classic Snake Game](https://william-osei.github.io/portfolio/projects/snake-game.html)
+**Technologies:** HTML5, CSS3, JavaScript, Canvas API<br>
+Recreated classic Snake game with modern web technologies, featuring smooth animations, score tracking, and responsive controls.<br>
+**Direct URL:** https://william-osei.github.io/portfolio/projects/snake-game.html
+
+### [Task Manager Pro](https://william-osei.github.io/portfolio/projects/todo-app.html)
+**Technologies:** HTML, CSS, JavaScript, LocalStorage<br>
+A feature-rich todo application with categories, priority levels, due dates, and local storage to keep tasks organized.<br>
+**Direct URL:** https://william-osei.github.io/portfolio/projects/todo-app.html
+
+### [Memory Card Game](https://william-osei.github.io/portfolio/projects/memory-game.html)
+**Technologies:** JavaScript, CSS Animations, HTML5<br>
+An interactive memory matching game with multiple difficulty levels, timer, and high score tracking to challenge memory skills.<br>
+**Direct URL:** https://william-osei.github.io/portfolio/projects/memory-game.html
+
+### [Secure Password Generator](https://william-osei.github.io/portfolio/projects/password-generator.html)
+**Technologies:** JavaScript, CSS3, Crypto API<br>
+A robust password generator with customizable options for length, character types, and security strength indicators.<br>
+**Direct URL:** https://william-osei.github.io/portfolio/projects/password-generator.html
+
+### [Tic Tac Toe Game](https://william-osei.github.io/portfolio/projects/tic-tac-toe.html)
+**Technologies:** JavaScript, CSS Grid, HTML5<br>
+Classic tic-tac-toe game with AI opponent, player vs player mode, and win detection algorithm with smooth animations.<br>
+**Direct URL:** https://william-osei.github.io/portfolio/projects/tic-tac-toe.html
+
+### [Real-time Currency Converter](https://william-osei.github.io/portfolio/projects/currency-converter.html)
+**Technologies:** JavaScript, API Integration, Chart.js<br>
 Currency converter with live exchange rates, historical data visualization, and support for multiple currencies worldwide.
-
-### Classic Snake Game
-**Technologies:** HTML5, CSS3, JavaScript, Canvas API  
-Recreated classic Snake game with modern web technologies, featuring smooth animations, score tracking, and responsive controls.
+**Direct URL:** https://william-osei.github.io/portfolio/projects/currency-converter.html
 
 ---
 
@@ -122,4 +166,4 @@ Recreated classic Snake game with modern web technologies, featuring smooth anim
 
 ---
 
-*© 2025 William Osei Aborah. All rights reserved.*
+*© 2026 William Osei Aborah. All rights reserved.*
